@@ -44,3 +44,27 @@ button {
     width: 244px;
 }
 
+.operand {
+    background: #877154;
+}
+
+.stuff {
+    background: #7E7F83;
+}
+
+.operator {
+    background: #D9C5B2;
+}
+
+
+.operand:active {
+background: #c5ac8c;
+}
+
+.stuff:active {
+    background: #b5b6bb;
+}
+
+.operator:active {
+background: #e6ded7;
+}
