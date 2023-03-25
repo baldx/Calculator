@@ -19,3 +19,28 @@ body {
     flex-wrap: wrap;
 }
 
+#display {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 8px;
+    border: 3px solid #14110F;
+}
+
+#input {
+    padding: 4px;
+}
+
+button {
+    font-size: 32px;
+    font-weight: 700;
+    width: 120px;
+    height: 80px;
+}
+
+#zero {
+    width: 244px;
+}
+
