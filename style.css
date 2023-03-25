@@ -17,6 +17,8 @@ body {
     height: 550px;
     width: 500px;
     flex-wrap: wrap;
+    background: #CCC5B9;
+    border-radius: 10px;
 }
 
 #display {
@@ -27,6 +29,7 @@ body {
     font-weight: 700;
     margin: 8px;
     border: 3px solid #14110F;
+    border-radius: 10px;
 }
 
 #input {
@@ -38,6 +41,8 @@ button {
     font-weight: 700;
     width: 120px;
     height: 80px;
+    border: 2px solid #14110F;
+    border-radius: 5px;
 }
 
 #zero {
