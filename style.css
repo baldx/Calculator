@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    background: #F3F3F4;
+}
+
+#calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #14110F;
+    height: 550px;
+    width: 500px;
+    flex-wrap: wrap;
+}
+
