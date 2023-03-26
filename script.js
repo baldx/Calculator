@@ -12,7 +12,6 @@ window.addEventListener("keydown", function(e) { //keydown event
 });
 
 
-
 function operate(x, y, op) {
     if (op === "+") return x + y;
     else if (op === "-") return x - y;
@@ -20,11 +19,34 @@ function operate(x, y, op) {
     else if (op === "/") return x / y;
 }
 
+function inputOperand(operand) {
+    if (firstOperator === null) {
+        if (displayValue === "0" || displayValue === 0) {
+            displayValue = operand;
+        }
+        else if (displayValue === firstOperand) {
+            displayValue = operand;
+        }
+        else {
+            displayValue += operand;
+        }
+    }
+    else {
+        if (displayValue === firstOperand) {
+            displayValue = operand;
+        }
+        else {
+            displayValue += operand;
+        }
+    }
+    console.log(operand);
+}
+
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
             if (buttons[i].classList.contains("operand")) {
-
+                
             }
         })
     }
