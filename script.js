@@ -64,6 +64,41 @@ function inputOperator(operator) {
     }
 }
 
+function equals() {
+    if (firstOperator === null) {
+        displayValue = displayValue;
+    }
+    else if (secondOperator != null) {
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator)
+        if (result === "x") {
+            displayValue = "x";
+        }
+        else {
+            displayValue = result;
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
+    }
+    else {
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), firstOperator)
+        if (result === "x") {
+            displayValue = "x";
+        }
+        else {
+            displayValue = result;
+            firstOperand = displayValue;
+            secondOperand = null;
+            firstOperator = null;
+            secondOperator = null;
+            result = null;
+        }
+    }
+}
+
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
@@ -72,13 +107,17 @@ function clickButton() {
                 updateDisplay();
             }
             else if (buttons[i].classList.contains("operator")) {
-
+                inputOperator(buttons[i].value);
+            }
+            else if (buttons[i].classList.contains("equals")) {
+                equals(buttons[i].value);
+                updateDisplay();
             }
         })
     }
 }
 
-
+clickButton();
 
 
 function updateDisplay() {
