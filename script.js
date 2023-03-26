@@ -42,11 +42,37 @@ function inputOperand(operand) {
     console.log(operand);
 }
 
+function inputOperator(operator) {
+    if (firstOperator != null && secondOperand === null) {
+        secondOperator = operator;
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
+        displayValue = result;
+        firstOperand = displayValue;
+        result = null;
+    }
+    else if (firstOperator != null && secondOperand != null) {
+        secondOperand = displayValue;
+        result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
+        displayValue = result;
+        firstOperand = displayValue;
+        result = null;
+    }
+    else {
+        firstOperator = operator;
+        firstOperand = displayValue;
+    }
+}
+
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
             if (buttons[i].classList.contains("operand")) {
-                
+                inputOperand(buttons[i].value);
+                updateDisplay();
+            }
+            else if (buttons[i].classList.contains("operator")) {
+
             }
         })
     }
