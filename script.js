@@ -11,10 +11,35 @@ window.addEventListener("keydown", function(e) { //keydown event
     key.click(); 
 });
 
-function updateDisplay() {
-    const display = document.querySelector("#display");
-    display.innerText  = displayValue;
-    if (display.length > 17) {
-        display.innerText = displayValue.substring(0, 9);
+
+
+function operate(x, y, op) {
+    if (op === "+") return x + y;
+    else if (op === "-") return x - y;
+    else if (op === "*") return x * y;
+    else if (op === "/") return x / y;
+}
+
+function clickButton() {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            if (buttons[i].classList.contains("operand")) {
+
+            }
+        })
     }
 }
+
+
+
+
+function updateDisplay() {
+    const display = document.getElementById("display");
+    display.innerText  = displayValue;
+    if (display.length > 17) {
+        display.innerText = displayValue.substring(0, 16);
+    }
+}
+
+
+updateDisplay();
