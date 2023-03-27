@@ -39,7 +39,6 @@ function inputOperand(operand) {
             displayValue += operand;
         }
     }
-    console.log(operand);
 }
 
 function inputOperator(operator) {
@@ -117,6 +116,16 @@ function switchSign(num) {
     else displayValue = 0;
 }
 
+function addComma(dot) {
+    if (displayValue === firstOperand || displayValue === secondOperand) {
+        displayValue = "0";
+        displayValue += dot;
+    }
+    else if (!displayValue.includes(dot)) {
+        displayValue += dot;
+    }
+}
+
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
@@ -141,6 +150,10 @@ function clickButton() {
             }
             else if (buttons[i].classList.contains("sign")) {
                 switchSign(displayValue);
+                updateDisplay();
+            }
+            else if (buttons[i].classList.contains("comma")) {
+                addComma(buttons[i].value);
                 updateDisplay();
             }
         })
