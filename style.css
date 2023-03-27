@@ -56,7 +56,7 @@ button {
     width: 232px;
 }
 
-.operand {
+.operand, .comma {
     background: #877154;
 }
 
@@ -69,7 +69,7 @@ button {
 }
 
 
-.operand:active {
+.operand:active, .comma:active {
 background: #c5ac8c;
 }
 
