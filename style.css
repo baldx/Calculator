@@ -60,11 +60,11 @@ button {
     background: #877154;
 }
 
-.stuff {
+.sign, .clear, .percent {
     background: #7E7F83;
 }
 
-.operator {
+.operator, .equals {
     background: #D9C5B2;
 }
 
@@ -73,11 +73,11 @@ button {
 background: #c5ac8c;
 }
 
-.stuff:active {
+.sign:active, .percent:active, .clear:active {
     background: #b5b6bb;
 }
 
-.operator:active {
+.operator:active, .equals:active {
 background: #e6ded7;
 }
 
