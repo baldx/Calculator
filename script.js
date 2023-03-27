@@ -99,6 +99,12 @@ function equals() {
     }
 }
 
+function percent(num) {
+    displayValue = (num/100).toString();
+}
+
+
+
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
@@ -113,6 +119,15 @@ function clickButton() {
                 equals(buttons[i].value);
                 updateDisplay();
             }
+            else if (buttons[i].classList.contains("percent")) {
+                percent(displayValue);
+                updateDisplay();
+            }
+            else if (buttons[i].classList.contains("clear")) {
+                clear();
+                updateDisplay();
+            }
+            
         })
     }
 }
