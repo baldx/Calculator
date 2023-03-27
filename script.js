@@ -103,6 +103,10 @@ function percent(num) {
     displayValue = (num/100).toString();
 }
 
+function clear() {
+    displayValue = 0;
+}
+
 
 
 function clickButton() {
