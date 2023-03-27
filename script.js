@@ -46,14 +46,14 @@ function inputOperator(operator) {
         secondOperator = operator;
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        displayValue = result;
+        displayValue = roundAccurately(result, 15).toString();
         firstOperand = displayValue;
         result = null;
     }
     else if (firstOperator != null && secondOperand != null) {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
-        displayValue = result;
+        displayValue = roundAccurately(result, 15).toString();
         firstOperand = displayValue;
         result = null;
     }
@@ -73,7 +73,7 @@ function equals() {
             displayValue = "x";
         }
         else {
-            displayValue = result;
+            displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
             secondOperand = null;
             firstOperator = null;
@@ -88,7 +88,7 @@ function equals() {
             displayValue = "x";
         }
         else {
-            displayValue = result;
+            displayValue = roundAccurately(result, 15).toString();
             firstOperand = displayValue;
             secondOperand = null;
             firstOperator = null;
@@ -160,9 +160,6 @@ function clickButton() {
     }
 }
 
-clickButton();
-
-
 function updateDisplay() {
     const display = document.getElementById("display");
     display.innerText  = displayValue;
@@ -171,5 +168,9 @@ function updateDisplay() {
     }
 }
 
+function roundAccurately(num, places) {
+    return parseFloat(Math.round(num + "e" + places) + "e-" + places)
+}
 
+clickButton();
 updateDisplay();
