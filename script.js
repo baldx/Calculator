@@ -107,7 +107,15 @@ function clear() {
     displayValue = 0;
 }
 
-
+function switchSign(num) {
+    if (displayValue > 0) {
+        displayValue = (num*-1).toString();
+    }
+    else if (displayValue < 0) {
+        displayValue = (num*-1).toString();
+    }
+    else displayValue = 0;
+}
 
 function clickButton() {
     for (let i = 0; i < buttons.length; i++) {
@@ -131,7 +139,10 @@ function clickButton() {
                 clear();
                 updateDisplay();
             }
-            
+            else if (buttons[i].classList.contains("sign")) {
+                switchSign(displayValue);
+                updateDisplay();
+            }
         })
     }
 }
@@ -142,8 +153,8 @@ clickButton();
 function updateDisplay() {
     const display = document.getElementById("display");
     display.innerText  = displayValue;
-    if (display.length > 17) {
-        display.innerText = displayValue.substring(0, 16);
+    if (display.length > 15) {
+        display.innerText = displayValue.substring(0, 14);
     }
 }
 
